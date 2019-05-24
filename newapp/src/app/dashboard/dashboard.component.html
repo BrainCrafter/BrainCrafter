@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Items</h1>
+  <div class="list-group list-group-flush">
+    <a *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="list-group-item list-group-item-action">
+      {{item.itemdesc}}
+    </a>
+  </div>
+</div>

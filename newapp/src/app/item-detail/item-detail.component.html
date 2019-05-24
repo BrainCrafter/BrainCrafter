@@ -1,0 +1,39 @@
+<div class="container" *ngIf="item">
+  <div class="row">
+      <div class="col-sm">
+          <h1>{{item.itemdesc}}</h1>
+          <hr />
+          <ul>
+            <li>Avg. Rating: {{item.avgrating}}</li>
+            <li>Avg. Sentiment: {{item.avgsentiment}}</li>
+          </ul>
+          <h2>Feedback</h2>
+          <ul>
+            <li *ngFor="let feedback of item.feedback">{{feedback}}</li>
+          </ul>
+        </div>
+    <div class="col-sm">
+      <div><img [src]="item.url"></div>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Website</th>
+              <th scope="col">Price</th>
+              <th scope="col">Avg. Rating</th>
+              <th scope="col">Avg. Sentiment</th>
+              <th scope="col">Number of Reviews</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let source of item.sources">
+              <td><a href="{{source.website}}">{{source.website}}</a></td>
+              <td>${{source.price}}</td>
+              <td>{{source.avgrating}}</td>
+              <td>{{source.avgsentiment}}</td>
+              <td>{{source.numberofreviews}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
